@@ -374,7 +374,13 @@ import nltk
 from nltk.corpus import stopwords
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
-nltk.download('stopwords', quiet=True)
+import nltk
+
+try:
+    stop_words = set(stopwords.words("indonesian"))
+except LookupError:
+    nltk.download("stopwords")
+    stop_words = set(stopwords.words("indonesian"))
 
 # Inisialisasi
 stop_words = set(stopwords.words('indonesian'))
