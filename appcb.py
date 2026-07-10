@@ -358,9 +358,9 @@ BASE_DIR = Path(__file__).parent
 
 @st.cache_resource
 def load_models():
-    w2v_model = Word2Vec.load(BASE_DIR / "word2vec_skipgram.model")
-    svm_model = load(BASE_DIR / "svm_skipgram.pkl")
-    label_encoder = load(BASE_DIR / "label_encoder.pkl")
+    w2v_model = Word2Vec.load(str(BASE_DIR / "word2vec_skipgram.model"))
+    svm_model = load(str(BASE_DIR / "svm_skipgram.pkl"))
+    label_encoder = load(str(BASE_DIR / "label_encoder.pkl"))
     return w2v_model, svm_model, label_encoder
 
 w2v_model, svm_model, label_encoder = load_models()
